@@ -5,32 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SiteCriativos - Sites Profissionais para Comerciantes Locais</title>
 
-    <!-- Font Awesome 6 (CDN) - Ícones modernos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Google Fonts: Poppins - Tipografia moderna e limpa -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* ============================================
-             RESET & CONFIGURAÇÕES GLOBAIS
-             ============================================ */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --roxo-escuro: #1a103c;
-            --roxo-medio: #2d1b69;
             --indigo: #4f46e5;
             --violeta: #7c3aed;
-            --azul-vibrante: #6366f1;
             --branco: #ffffff;
             --cinza-claro: #f8f9fc;
             --cinza-medio: #e2e4eb;
@@ -38,8 +24,6 @@
             --titulo-escuro: #1a103c;
             --whatsapp-verde: #25D366;
             --whatsapp-verde-hover: #1ebe5b;
-            --sombra-suave: 0 4px 20px rgba(0, 0, 0, 0.06);
-            --sombra-media: 0 10px 40px rgba(0, 0, 0, 0.12);
             --sombra-card: 0 8px 32px rgba(79, 70, 229, 0.10);
             --sombra-card-hover: 0 16px 48px rgba(79, 70, 229, 0.20);
             --raio-borda: 16px;
@@ -48,10 +32,7 @@
             --transicao-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
+        html { scroll-behavior: smooth; font-size: 16px; }
 
         body {
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -59,7 +40,6 @@
             color: var(--cinza-texto);
             line-height: 1.6;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
         }
 
         .container {
@@ -69,9 +49,7 @@
             padding: 0 24px;
         }
 
-        /* ============================================
-             HEADER
-             ============================================ */
+        /* HEADER */
         .header {
             position: fixed;
             top: 0;
@@ -79,17 +57,16 @@
             width: 100%;
             z-index: 1000;
             padding: 14px 0;
-            transition: var(--transicao-suave);
             background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid transparent;
+            transition: var(--transicao-suave);
         }
 
         .header.scrolled {
             background-color: rgba(255, 255, 255, 0.95);
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-            padding: 10px 0;
         }
 
         .header .container {
@@ -149,9 +126,7 @@
             box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
         }
 
-        /* ============================================
-             HERO
-             ============================================ */
+        /* HERO */
         .hero {
             padding: 160px 0 100px;
             background: linear-gradient(160deg, #1a103c 0%, #2d1b69 30%, #1e1b4b 60%, #0f0a2e 100%);
@@ -170,6 +145,11 @@
             opacity: 0.04;
             background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
             background-size: 40px 40px;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
         }
 
         .hero__titulo {
@@ -263,9 +243,7 @@
             box-shadow: 0 14px 44px rgba(37, 211, 102, 0.6);
         }
 
-        /* ============================================
-             BENEFÍCIOS (AUTORIDADE)
-             ============================================ */
+        /* BENEFÍCIOS */
         .beneficios {
             padding: 100px 0;
             background-color: var(--cinza-claro);
@@ -328,12 +306,86 @@
             color: var(--cinza-texto);
         }
 
-        /* ============================================
-             DEPOIMENTOS (PROVA SOCIAL)
-             ============================================ */
-        .depoimentos {
+        /* CATEGORIAS */
+        .categorias {
             padding: 100px 0;
             background-color: var(--branco);
+        }
+
+        .categorias__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .card-categoria {
+            background: var(--cinza-claro);
+            border-radius: var(--raio-borda-grande);
+            padding: 40px 32px;
+            text-align: center;
+            box-shadow: var(--sombra-card);
+            transition: var(--transicao-bounce);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-categoria:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--sombra-card-hover);
+        }
+
+        .card-categoria__icone {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--indigo), var(--violeta));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--branco);
+            transition: var(--transicao-bounce);
+        }
+
+        .card-categoria:hover .card-categoria__icone {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .card-categoria__titulo {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--titulo-escuro);
+            margin-bottom: 20px;
+        }
+
+        .card-categoria__exemplos {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .card-categoria:hover .card-categoria__exemplos {
+            max-height: 300px;
+        }
+
+        .card-categoria__exemplo {
+            font-size: 0.9rem;
+            color: var(--cinza-texto);
+            padding: 8px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .card-categoria__exemplo:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        /* DEPOIMENTOS */
+        .depoimentos {
+            padding: 100px 0;
+            background-color: var(--cinza-claro);
         }
 
         .depoimentos__grid {
@@ -343,7 +395,7 @@
         }
 
         .card-depoimento {
-            background: var(--cinza-claro);
+            background: var(--branco);
             padding: 32px;
             border-radius: var(--raio-borda);
             position: relative;
@@ -384,9 +436,7 @@
             color: var(--cinza-texto);
         }
 
-        /* ============================================
-             FOOTER
-             ============================================ */
+        /* FOOTER */
         .footer {
             background-color: #0f0a1e;
             color: #b0b8cc;
@@ -427,6 +477,7 @@
             background: rgba(255, 255, 255, 0.12);
         }
 
+        /* WHATSAPP FLUTUANTE */
         .whatsapp-flutuante {
             position: fixed;
             bottom: 30px;
@@ -457,6 +508,7 @@
             .hero__titulo { font-size: 2rem; }
             .hero { padding: 120px 0 60px; }
             .btn-cta { width: 100%; text-align: center; justify-content: center; }
+            .categorias__grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -521,6 +573,56 @@
                     <div class="card-beneficio__icone"><i class="fa-solid fa-medal"></i></div>
                     <h3 class="card-beneficio__titulo">Credibilidade Profissional</h3>
                     <p class="card-beneficio__descricao">Passe autoridade imediata para seus clientes com um design moderno, limpo e extremamente rápido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categorias">
+        <div class="container">
+            <div class="beneficios__cabecalho">
+                <h2 class="beneficios__titulo">Soluções para o seu Negócio</h2>
+                <p class="beneficios__subtitulo" style="color: var(--cinza-texto);">Passe o mouse para ver exemplos específicos do seu nicho</p>
+            </div>
+            <div class="categorias__grid">
+                <div class="card-categoria">
+                    <div class="card-categoria__icone"><i class="fa-solid fa-utensils"></i></div>
+                    <h3 class="card-categoria__titulo">Gastronomia</h3>
+                    <div class="card-categoria__exemplos">
+                        <div class="card-categoria__exemplo">Restaurantes</div>
+                        <div class="card-categoria__exemplo">Pizzarias</div>
+                        <div class="card-categoria__exemplo">Cafeterias</div>
+                    </div>
+                </div>
+
+                <div class="card-categoria">
+                    <div class="card-categoria__icone"><i class="fa-solid fa-shopping-bag"></i></div>
+                    <h3 class="card-categoria__titulo">Varejo</h3>
+                    <div class="card-categoria__exemplos">
+                        <div class="card-categoria__exemplo">Lojas de Roupas</div>
+                        <div class="card-categoria__exemplo">Calçados</div>
+                        <div class="card-categoria__exemplo">Acessórios</div>
+                    </div>
+                </div>
+
+                <div class="card-categoria">
+                    <div class="card-categoria__icone"><i class="fa-solid fa-wrench"></i></div>
+                    <h3 class="card-categoria__titulo">Serviços</h3>
+                    <div class="card-categoria__exemplos">
+                        <div class="card-categoria__exemplo">Encanadores</div>
+                        <div class="card-categoria__exemplo">Eletricistas</div>
+                        <div class="card-categoria__exemplo">Oficinas</div>
+                    </div>
+                </div>
+
+                <div class="card-categoria">
+                    <div class="card-categoria__icone"><i class="fa-solid fa-spa"></i></div>
+                    <h3 class="card-categoria__titulo">Saúde & Estética</h3>
+                    <div class="card-categoria__exemplos">
+                        <div class="card-categoria__exemplo">Salões de Beleza</div>
+                        <div class="card-categoria__exemplo">Clínicas Dentárias</div>
+                        <div class="card-categoria__exemplo">Academias</div>
+                    </div>
                 </div>
             </div>
         </div>
