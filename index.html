@@ -18,23 +18,25 @@
             --indigo: #4f46e5;
             --violeta: #7c3aed;
             --branco: #ffffff;
-            --preto-bg: #121212;
-            --preto-card: #1e1e1e;
-            --cinza-texto: #b0b8cc;
+            --cinza-claro: #f8f9fc;
+            --cinza-texto: #5a5d6e;
+            --titulo-escuro: #1a103c;
             --whatsapp-verde: #25D366;
             --whatsapp-verde-hover: #1ebe5b;
-            --sombra-card: 0 8px 32px rgba(0, 0, 0, 0.3);
-            --raio-borda: 12px;
-            --transicao: all 0.3s ease;
+            --sombra-card: 0 8px 32px rgba(79, 70, 229, 0.10);
+            --raio-borda-grande: 24px;
+            --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transicao-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         html { scroll-behavior: smooth; font-size: 16px; }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--preto-bg);
-            color: var(--branco);
+            background-color: var(--branco);
+            color: var(--cinza-texto);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
@@ -42,10 +44,10 @@
         /* HEADER */
         .header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            padding: 14px 0; background-color: rgba(18, 18, 18, 0.85);
-            backdrop-filter: blur(16px); transition: var(--transicao);
+            padding: 14px 0; background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px); transition: var(--transicao-suave);
         }
-        .header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.5); }
+        .header.scrolled { background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08); }
         .header .container { display: flex; align-items: center; justify-content: space-between; }
         .header__logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
         .header__logo-icone {
@@ -53,92 +55,58 @@
             border-radius: 12px; display: flex; align-items: center; justify-content: center;
             color: var(--branco); font-size: 20px; font-weight: 700;
         }
-        .header__logo-texto { font-size: 1.35rem; font-weight: 700; color: var(--branco); }
+        .header__logo-texto { font-size: 1.35rem; font-weight: 700; color: var(--roxo-escuro); }
         .header__logo-texto span { color: var(--violeta); }
 
         /* HERO */
         .hero {
-            padding: 140px 0 80px; text-align: center;
-            background: radial-gradient(circle at top right, #2d1b69 0%, #121212 60%);
+            padding: 160px 0 100px;
+            background: linear-gradient(160deg, #1a103c 0%, #2d1b69 30%, #1e1b4b 60%, #0f0a2e 100%);
+            position: relative; overflow: hidden; text-align: center; min-height: 100vh; display: flex; align-items: center;
         }
-        .hero__titulo {
-            font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.2;
-            max-width: 900px; margin: 0 auto 24px;
-        }
-        .hero__titulo span { background: #2563eb; color: white; padding: 0 15px; }
-        .hero__subtitulo { color: var(--cinza-texto); max-width: 700px; margin: 0 auto 40px; }
+        .hero__grid-pontos { position: absolute; inset: 0; opacity: 0.04; background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 40px 40px; }
+        .hero__titulo { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; color: var(--branco); line-height: 1.15; margin: 0 auto 24px; max-width: 900px; }
+        .hero__subtitulo { font-size: clamp(1.1rem, 2vw, 1.3rem); color: #c4c8d6; max-width: 700px; margin: 0 auto 40px; }
+        .hero__preco-card { display: inline-block; background: rgba(255, 255, 255, 0.08); border: 2px solid rgba(255, 255, 255, 0.18); border-radius: var(--raio-borda-grande); padding: 28px 48px; margin-bottom: 40px; backdrop-filter: blur(12px); }
+        .hero__preco-valor { font-size: clamp(2.8rem, 6vw, 4.2rem); font-weight: 900; color: #ffffff; line-height: 1; }
+        .hero__preco-valor .cifrao { font-size: 0.5em; vertical-align: super; color: #a78bfa; }
 
-        /* CATÁLOGO SECTION */
-        .catalogo { padding: 60px 0; }
-        .catalogo__header { margin-bottom: 50px; }
-        .catalogo__titulo { font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; }
-        .catalogo__titulo span { background: #2563eb; padding: 0 15px; }
-        .catalogo__subtitulo { color: var(--cinza-texto); font-size: 1.1rem; }
+        .btn-cta {
+            display: inline-flex; align-items: center; gap: 12px;
+            background: linear-gradient(135deg, var(--whatsapp-verde), #1ebe5b);
+            color: var(--branco); text-decoration: none; padding: 18px 40px; border-radius: 50px;
+            font-weight: 700; font-size: 1.15rem; transition: var(--transicao-bounce);
+            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+        }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 44px rgba(37, 211, 102, 0.6); }
 
-        .catalogo__layout { display: grid; grid-template-columns: 250px 1fr; gap: 40px; }
-
-        /* SIDEBAR */
-        .sidebar__secao { margin-bottom: 30px; }
-        .sidebar__label { font-size: 1.1rem; font-weight: 700; margin-bottom: 15px; display: block; }
-        .sidebar__search {
-            width: 100%; padding: 12px 15px; background: #1e1e1e; border: 1px solid #333;
-            border-radius: 8px; color: white; margin-bottom: 20px;
-        }
-        .sidebar__nav { list-style: none; }
-        .sidebar__item {
-            padding: 10px 15px; border-radius: 8px; cursor: pointer; transition: var(--transicao);
-            color: var(--cinza-texto); display: flex; justify-content: space-between; align-items: center;
-        }
-        .sidebar__item:hover, .sidebar__item.active { background: #1e1e1e; color: white; }
-        .sidebar__count { font-size: 0.8rem; opacity: 0.5; }
-
-        /* GRID DE CARDS */
-        .catalogo__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
-        .card-modelo {
-            background: var(--preto-card); border-radius: var(--raio-borda);
-            overflow: hidden; transition: var(--transicao); position: relative;
-            display: flex; flex-direction: column;
-        }
-        .card-modelo:hover { transform: translateY(-8px); }
-        .card-modelo__img { width: 100%; height: 200px; object-fit: cover; }
-        .card-modelo__badge {
-            position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.8);
-            padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700;
-        }
-        .card-modelo__content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-modelo__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-        .card-modelo__titulo { font-size: 1.2rem; font-weight: 700; }
-        .card-modelo__rating { color: #fbbf24; font-size: 0.85rem; font-weight: 700; background: rgba(251,191,36,0.1); padding: 2px 8px; border-radius: 6px; }
-        .card-modelo__desc { font-size: 0.85rem; color: var(--cinza-texto); margin-bottom: 20px; min-height: 40px; }
+        /* SEÇÃO DE CATÁLOGO (INTEGRADA) */
+        .catalogo { padding: 100px 0; background-color: #121212; color: white; }
+        .secao-titulo { text-align: center; margin-bottom: 60px; }
+        .secao-titulo h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 16px; }
+        .secao-titulo h2 span { background: #2563eb; padding: 0 15px; }
         
-        .card-modelo__preco-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .card-modelo__preco { font-size: 1.3rem; font-weight: 800; }
-        .card-modelo__cat { font-size: 0.75rem; color: var(--cinza-texto); }
-
-        .card-modelo__actions { display: flex; flex-direction: column; gap: 10px; }
-        .btn-ver {
-            width: 100%; padding: 10px; text-align: center; border: 1px solid #333;
-            border-radius: 8px; color: white; text-decoration: none; font-size: 0.9rem;
-            font-weight: 600; transition: var(--transicao);
-        }
-        .btn-ver:hover { background: #333; }
+        .catalogo__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+        .card-modelo { background: #1e1e1e; border-radius: 16px; overflow: hidden; transition: var(--transicao-suave); display: flex; flex-direction: column; }
+        .card-modelo:hover { transform: translateY(-10px); }
+        .card-modelo__img { width: 100%; height: 200px; object-fit: cover; }
+        .card-modelo__content { padding: 24px; flex-grow: 1; }
+        .card-modelo__titulo { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .card-modelo__rating { color: #fbbf24; font-size: 0.9rem; margin-bottom: 15px; display: block; }
+        .card-modelo__preco { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: block; }
+        
         .btn-comprar {
             width: 100%; padding: 12px; text-align: center; background: var(--whatsapp-verde);
             border-radius: 8px; color: white; text-decoration: none; font-size: 0.9rem;
             font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px;
-            transition: var(--transicao);
         }
-        .btn-comprar:hover { background: var(--whatsapp-verde-hover); }
 
         /* FOOTER */
-        .footer { padding: 60px 0 30px; text-align: center; border-top: 1px solid #222; margin-top: 60px; }
-        .footer__logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+        .footer { background-color: #0f0a1e; color: #b0b8cc; padding: 60px 0 30px; text-align: center; }
+        .footer__logo { font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 20px; }
         .footer__logo span { color: var(--violeta); }
 
-        @media (max-width: 992px) {
-            .catalogo__layout { grid-template-columns: 1fr; }
-            .sidebar { display: none; }
-        }
+        @media (max-width: 768px) { .hero__titulo { font-size: 1.8rem; } .btn-cta { width: 100%; text-align: center; } }
     </style>
 </head>
 <body>
@@ -149,113 +117,78 @@
                 <div class="header__logo-icone">SC</div>
                 <span class="header__logo-texto">Site<span>Criativos</span></span>
             </a>
-            <a href="https://wa.me/5511953429077?text=Quero%20meu%20site%20profissional%20-%20Solicitar%20consultoria%20gratuita" class="btn-comprar" style="width: auto; padding: 8px 20px;">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>Falar no WhatsApp</span>
-            </a>
+            <a href="#catalogo" class="btn-cta" style="padding: 10px 20px; font-size: 0.9rem;">Ver Modelos</a>
         </div>
     </header>
 
     <section class="hero">
+        <div class="hero__grid-pontos"></div>
         <div class="container">
             <h1 class="hero__titulo">
-                Seu comércio local <span>merece ser encontrado</span> no Google.
+                Seu comércio local merece ser encontrado no Google. Transforme sua presença online em vendas reais.
             </h1>
-            <p class="hero__subtitulo">Transforme sua presença online em vendas reais com sites de alta performance a partir de R$ 450,00.</p>
+            <p class="hero__subtitulo">Apareça para os clientes certos e aumente seu faturamento com um site de alta performance.</p>
+
+            <div class="hero__preco-card">
+                <p style="font-size: 0.9rem; color: #b0b8cc; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Investimento</p>
+                <p class="hero__preco-valor">
+                    <span class="cifrao">R$</span>450<span style="font-size: 0.4em; color: #c4b5fd;">,00</span>
+                </p>
+                <p style="margin-top:8px; font-size: 0.8rem; color: #b0b8cc;">A partir de</p>
+            </div>
+
+            <br>
+            <a href="https://wa.me/5511953429077?text=Quero%20meu%20site%20profissional%20-%20Solicitar%20consultoria%20gratuita" class="btn-cta" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                Quero meu site profissional - Solicitar consultoria gratuita
+            </a>
         </div>
     </section>
 
-    <section class="catalogo">
+    <section class="catalogo" id="catalogo">
         <div class="container">
-            <div class="catalogo__header">
-                <h2 class="catalogo__titulo"><span>Catálogo de Modelos</span></h2>
-                <p class="catalogo__subtitulo">Soluções completas de design para o seu negócio. Encontre o estilo perfeito e lance seu site hoje.</p>
+            <div class="secao-titulo">
+                <h2><span>Catálogo de Modelos</span></h2>
+                <p>Escolha o estilo perfeito para o seu negócio</p>
             </div>
 
-            <div class="catalogo__layout">
-                <aside class="sidebar">
-                    <div class="sidebar__secao">
-                        <label class="sidebar__label">Pesquisar</label>
-                        <input type="text" class="sidebar__search" placeholder="Buscar modelos...">
+            <div class="catalogo__grid">
+                <!-- Modelo 1: Studio Beauty -->
+                <div class="card-modelo">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop" alt="Estética" class="card-modelo__img">
+                    <div class="card-modelo__content">
+                        <h3 class="card-modelo__titulo">Studio Beauty</h3>
+                        <span class="card-modelo__rating"><i class="fa-solid fa-star"></i> 4.9 (Especialista em Estética)</span>
+                        <span class="card-modelo__preco">R$ 450,00</span>
+                        <a href="https://wa.me/5511953429077?text=Tenho%20interesse%20no%20modelo%20Studio%20Beauty" class="btn-comprar" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
                     </div>
-                    <div class="sidebar__secao">
-                        <label class="sidebar__label">Categorias</label>
-                        <ul class="sidebar__nav">
-                            <li class="sidebar__item active">Todos os Modelos</li>
-                            <li class="sidebar__item">Restaurante / Lanchonete <span class="sidebar__count">3</span></li>
-                            <li class="sidebar__item">Barbearia / Salão <span class="sidebar__count">3</span></li>
-                            <li class="sidebar__item">Loja de Moda / Boutique <span class="sidebar__count">3</span></li>
-                            <li class="sidebar__item">Serviços <span class="sidebar__count">3</span></li>
-                        </ul>
-                    </div>
-                </aside>
+                </div>
 
-                <div class="catalogo__grid">
-                    <!-- Card 1: Studio Beauty -->
-                    <div class="card-modelo">
-                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop" alt="Studio Beauty" class="card-modelo__img">
-                        <div class="card-modelo__content">
-                            <div class="card-modelo__header">
-                                <h3 class="card-modelo__titulo">Studio Beauty</h3>
-                                <span class="card-modelo__rating"><i class="fa-solid fa-star"></i> 4.8</span>
-                            </div>
-                            <p class="card-modelo__desc">Template elegante para salões de beleza e clínicas de estética.</p>
-                            <div class="card-modelo__preco-info">
-                                <span class="card-modelo__preco">R$ 450,00</span>
-                                <span class="card-modelo__cat">Salão de Beleza</span>
-                            </div>
-                            <div class="card-modelo__actions">
-                                <a href="#" class="btn-ver">Ver também</a>
-                                <a href="https://wa.me/5511953429077?text=Tenho%20interesse%20no%20modelo%20Studio%20Beauty" class="btn-comprar" target="_blank">
-                                    <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
-                                </a>
-                            </div>
-                        </div>
+                <!-- Modelo 2: Gastronomia -->
+                <div class="card-modelo">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop" alt="Gastronomia" class="card-modelo__img">
+                    <div class="card-modelo__content">
+                        <h3 class="card-modelo__titulo">Sabor & Arte</h3>
+                        <span class="card-modelo__rating"><i class="fa-solid fa-star"></i> 4.8 (Ideal para Restaurantes)</span>
+                        <span class="card-modelo__preco">R$ 450,00</span>
+                        <a href="https://wa.me/5511953429077?text=Tenho%20interesse%20no%20modelo%20Sabor%20e%20Arte" class="btn-comprar" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
                     </div>
+                </div>
 
-                    <!-- Card 2: Unhas e cílios -->
-                    <div class="card-modelo">
-                        <img src="https://images.unsplash.com/photo-1632345033848-6a6297577d3b?q=80&w=800&auto=format&fit=crop" alt="Unhas e cílios" class="card-modelo__img">
-                        <div class="card-modelo__content">
-                            <div class="card-modelo__header">
-                                <h3 class="card-modelo__titulo">Unhas e cílios</h3>
-                                <span class="card-modelo__rating"><i class="fa-solid fa-star"></i> 4.7</span>
-                            </div>
-                            <p class="card-modelo__desc">Template delicado para estúdios de nail art e sobrancelhas.</p>
-                            <div class="card-modelo__preco-info">
-                                <span class="card-modelo__preco">R$ 450,00</span>
-                                <span class="card-modelo__cat">Estética</span>
-                            </div>
-                            <div class="card-modelo__actions">
-                                <a href="#" class="btn-ver">Ver também</a>
-                                <a href="https://wa.me/5511953429077?text=Tenho%20interesse%20no%20modelo%20Unhas%20e%20cílios" class="btn-comprar" target="_blank">
-                                    <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Elegância de Boutique -->
-                    <div class="card-modelo">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop" alt="Boutique" class="card-modelo__img">
-                        <div class="card-modelo__badge">Mais Vendido</div>
-                        <div class="card-modelo__content">
-                            <div class="card-modelo__header">
-                                <h3 class="card-modelo__titulo">Elegância de...</h3>
-                                <span class="card-modelo__rating"><i class="fa-solid fa-star"></i> 4.8</span>
-                            </div>
-                            <p class="card-modelo__desc">Template luxuoso para boutiques e lojas de moda feminina.</p>
-                            <div class="card-modelo__preco-info">
-                                <span class="card-modelo__preco">R$ 450,00</span>
-                                <span class="card-modelo__cat">Boutique</span>
-                            </div>
-                            <div class="card-modelo__actions">
-                                <a href="#" class="btn-ver">Ver também</a>
-                                <a href="https://wa.me/5511953429077?text=Tenho%20interesse%20no%20modelo%20Elegância%20de%20Boutique" class="btn-comprar" target="_blank">
-                                    <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
-                                </a>
-                            </div>
-                        </div>
+                <!-- Modelo 3: Moda -->
+                <div class="card-modelo">
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=800&auto=format&fit=crop" alt="Moda" class="card-modelo__img">
+                    <div class="card-modelo__content">
+                        <h3 class="card-modelo__titulo">Elegância Boutique</h3>
+                        <span class="card-modelo__rating"><i class="fa-solid fa-star"></i> 4.9 (Focado em Vendas)</span>
+                        <span class="card-modelo__preco">R$ 450,00</span>
+                        <a href="https://wa.me/5511953429077?text=Tenho%20interesse%20no%20modelo%20Boutique" class="btn-comprar" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
