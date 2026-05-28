@@ -19,14 +19,12 @@
             --violeta: #7c3aed;
             --branco: #ffffff;
             --cinza-claro: #f8f9fc;
-            --cinza-medio: #e2e4eb;
             --cinza-texto: #5a5d6e;
             --titulo-escuro: #1a103c;
             --whatsapp-verde: #25D366;
             --whatsapp-verde-hover: #1ebe5b;
             --sombra-card: 0 8px 32px rgba(79, 70, 229, 0.10);
             --sombra-card-hover: 0 16px 48px rgba(79, 70, 229, 0.20);
-            --raio-borda: 16px;
             --raio-borda-grande: 24px;
             --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transicao-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -35,7 +33,7 @@
         html { scroll-behavior: smooth; font-size: 16px; }
 
         body {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--branco);
             color: var(--cinza-texto);
             line-height: 1.6;
@@ -59,13 +57,11 @@
             padding: 14px 0;
             background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid transparent;
             transition: var(--transicao-suave);
         }
 
         .header.scrolled {
             background-color: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
         }
 
@@ -101,30 +97,7 @@
             color: var(--roxo-escuro);
         }
 
-        .header__logo-texto span {
-            color: var(--violeta);
-        }
-
-        .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: var(--whatsapp-verde);
-            color: var(--branco);
-            text-decoration: none;
-            padding: 11px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transicao-bounce);
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
-        }
-
-        .btn-whatsapp:hover {
-            background-color: var(--whatsapp-verde-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
-        }
+        .header__logo-texto span { color: var(--violeta); }
 
         /* HERO */
         .hero {
@@ -141,15 +114,9 @@
         .hero__grid-pontos {
             position: absolute;
             inset: 0;
-            pointer-events: none;
             opacity: 0.04;
             background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
             background-size: 40px 40px;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 2;
         }
 
         .hero__titulo {
@@ -160,15 +127,7 @@
             margin-bottom: 24px;
             letter-spacing: -1px;
             max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero__titulo .destaque {
-            background: linear-gradient(135deg, #c4b5fd, #a78bfa, #818cf8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin: 0 auto 24px;
         }
 
         .hero__subtitulo {
@@ -176,7 +135,6 @@
             color: #c4c8d6;
             max-width: 700px;
             margin: 0 auto 40px;
-            font-weight: 400;
         }
 
         .hero__preco-card {
@@ -187,21 +145,6 @@
             padding: 28px 48px;
             margin-bottom: 40px;
             backdrop-filter: blur(12px);
-            transition: var(--transicao-suave);
-        }
-
-        .hero__preco-card:hover {
-            border-color: rgba(255, 255, 255, 0.35);
-            transform: translateY(-4px);
-        }
-
-        .hero__preco-label {
-            font-size: 0.9rem;
-            color: #b0b8cc;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 500;
-            margin-bottom: 8px;
         }
 
         .hero__preco-valor {
@@ -209,19 +152,9 @@
             font-weight: 900;
             color: #ffffff;
             line-height: 1;
-            letter-spacing: -2px;
         }
 
-        .hero__preco-valor .cifrao {
-            font-size: 0.5em;
-            vertical-align: super;
-            color: #a78bfa;
-        }
-
-        .hero__preco-valor .centavos {
-            font-size: 0.4em;
-            color: #c4b5fd;
-        }
+        .hero__preco-valor .cifrao { font-size: 0.5em; vertical-align: super; color: #a78bfa; }
 
         .btn-cta {
             display: inline-flex;
@@ -238,85 +171,16 @@
             box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
         }
 
-        .btn-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 44px rgba(37, 211, 102, 0.6);
-        }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 44px rgba(37, 211, 102, 0.6); }
 
-        /* BENEFÍCIOS */
-        .beneficios {
-            padding: 100px 0;
-            background-color: var(--cinza-claro);
-        }
+        /* SEÇÃO DE CATEGORIAS (SOLUÇÕES) */
+        .categorias { padding: 100px 0; background-color: var(--branco); }
 
-        .beneficios__cabecalho {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+        .secao-titulo { text-align: center; margin-bottom: 60px; }
 
-        .beneficios__titulo {
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
-            font-weight: 700;
-            color: var(--titulo-escuro);
-            margin-bottom: 16px;
-        }
+        .secao-titulo h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--titulo-escuro); margin-bottom: 16px; }
 
-        .beneficios__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
-
-        .card-beneficio {
-            background: var(--branco);
-            border-radius: var(--raio-borda-grande);
-            padding: 40px 32px;
-            text-align: center;
-            box-shadow: var(--sombra-card);
-            transition: var(--transicao-bounce);
-        }
-
-        .card-beneficio:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--sombra-card-hover);
-        }
-
-        .card-beneficio__icone {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 24px;
-            background: linear-gradient(135deg, #eef2ff, #e0e7ff);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--indigo);
-        }
-
-        .card-beneficio__titulo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--titulo-escuro);
-            margin-bottom: 12px;
-        }
-
-        .card-beneficio__descricao {
-            font-size: 0.95rem;
-            color: var(--cinza-texto);
-        }
-
-        /* CATEGORIAS */
-        .categorias {
-            padding: 100px 0;
-            background-color: var(--branco);
-        }
-
-        .categorias__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-        }
+        .categorias__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
 
         .card-categoria {
             background: var(--cinza-claro);
@@ -327,189 +191,49 @@
             transition: var(--transicao-bounce);
             cursor: pointer;
             position: relative;
-            overflow: hidden;
         }
 
-        .card-categoria:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--sombra-card-hover);
-        }
+        .card-categoria:hover { transform: translateY(-10px); box-shadow: var(--sombra-card-hover); }
 
         .card-categoria__icone {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 24px;
+            width: 80px; height: 80px; margin: 0 auto 24px;
             background: linear-gradient(135deg, var(--indigo), var(--violeta));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: var(--branco);
-            transition: var(--transicao-bounce);
+            border-radius: 20px; display: flex; align-items: center; justify-content: center;
+            font-size: 2.2rem; color: var(--branco);
         }
 
-        .card-categoria:hover .card-categoria__icone {
-            transform: scale(1.1) rotate(-5deg);
-        }
+        .card-categoria__titulo { font-size: 1.3rem; font-weight: 700; color: var(--titulo-escuro); margin-bottom: 20px; }
 
-        .card-categoria__titulo {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--titulo-escuro);
-            margin-bottom: 20px;
-        }
+        .card-categoria__exemplos { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
 
-        .card-categoria__exemplos {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-        }
+        .card-categoria:hover .card-categoria__exemplos { max-height: 300px; }
 
-        .card-categoria:hover .card-categoria__exemplos {
-            max-height: 300px;
-        }
+        .card-categoria__exemplo { font-size: 0.95rem; color: var(--cinza-texto); padding: 8px 0; border-top: 1px solid rgba(0,0,0,0.05); }
 
-        .card-categoria__exemplo {
-            font-size: 0.9rem;
-            color: var(--cinza-texto);
-            padding: 8px 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-        }
+        /* BENEFÍCIOS (AUTORIDADE) */
+        .beneficios { padding: 100px 0; background-color: var(--cinza-claro); }
 
-        .card-categoria__exemplo:first-child {
-            border-top: none;
-            padding-top: 0;
-        }
+        .beneficios__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
 
-        /* DEPOIMENTOS */
-        .depoimentos {
-            padding: 100px 0;
-            background-color: var(--cinza-claro);
-        }
-
-        .depoimentos__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
-
-        .card-depoimento {
-            background: var(--branco);
-            padding: 32px;
-            border-radius: var(--raio-borda);
-            position: relative;
-        }
-
-        .card-depoimento__texto {
-            font-style: italic;
-            margin-bottom: 24px;
-            color: var(--cinza-texto);
-        }
-
-        .card-depoimento__autor {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .card-depoimento__foto {
-            width: 50px;
-            height: 50px;
-            background-color: var(--cinza-medio);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--cinza-texto);
-        }
-
-        .card-depoimento__info h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--titulo-escuro);
-        }
-
-        .card-depoimento__info p {
-            font-size: 0.85rem;
-            color: var(--cinza-texto);
-        }
+        .card-beneficio { background: var(--branco); border-radius: var(--raio-borda-grande); padding: 40px 32px; text-align: center; box-shadow: var(--sombra-card); }
 
         /* FOOTER */
-        .footer {
-            background-color: #0f0a1e;
-            color: #b0b8cc;
-            padding: 60px 0 30px;
-            text-align: center;
-        }
+        .footer { background-color: #0f0a1e; color: #b0b8cc; padding: 60px 0 30px; text-align: center; }
 
-        .footer__logo {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
+        .footer__logo { font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 20px; }
 
-        .footer__logo span {
-            color: var(--violeta);
-        }
+        .footer__logo span { color: var(--violeta); }
 
-        .footer__contato {
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer__telefone {
-            color: #e0d7ff;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 10px 20px;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.05);
-            transition: var(--transicao-suave);
-        }
-
-        .footer__telefone:hover {
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        /* WHATSAPP FLUTUANTE */
         .whatsapp-flutuante {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            width: 60px;
-            height: 60px;
-            background-color: var(--whatsapp-verde);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
-            text-decoration: none;
-            transition: var(--transicao-bounce);
+            position: fixed; bottom: 30px; right: 30px; z-index: 9999;
+            width: 60px; height: 60px; background-color: var(--whatsapp-verde);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5); text-decoration: none;
         }
 
-        .whatsapp-flutuante i {
-            color: white;
-            font-size: 2rem;
-        }
+        .whatsapp-flutuante i { color: white; font-size: 2rem; }
 
-        .whatsapp-flutuante:hover {
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            .hero__titulo { font-size: 2rem; }
-            .hero { padding: 120px 0 60px; }
-            .btn-cta { width: 100%; text-align: center; justify-content: center; }
-            .categorias__grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 768px) { .hero__titulo { font-size: 1.8rem; } .btn-cta { width: 100%; text-align: center; } }
     </style>
 </head>
 <body>
@@ -531,18 +255,18 @@
         <div class="hero__grid-pontos"></div>
         <div class="container">
             <h1 class="hero__titulo">
-                Seu comércio local <span class="destaque">merece ser encontrado</span> no Google.
+                Seu comércio local merece ser encontrado no Google. Transforme sua presença online em vendas reais.
             </h1>
             <p class="hero__subtitulo">
-                Transforme sua presença online em vendas reais com um site profissional de alta performance.
+                Apareça para os clientes certos e aumente seu faturamento com um site de alta performance.
             </p>
 
             <div class="hero__preco-card">
-                <p class="hero__preco-label">Investimento</p>
+                <p style="font-size: 0.9rem; color: #b0b8cc; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Investimento</p>
                 <p class="hero__preco-valor">
-                    <span class="cifrao">R$</span>450<span class="centavos">,00</span>
+                    <span class="cifrao">R$</span>450<span style="font-size: 0.4em; color: #c4b5fd;">,00</span>
                 </p>
-                <p class="hero__preco-label" style="margin-top:8px;">A partir de</p>
+                <p style="margin-top:8px; font-size: 0.8rem; color: #b0b8cc;">A partir de</p>
             </div>
 
             <br>
@@ -555,24 +279,24 @@
 
     <section class="beneficios">
         <div class="container">
-            <div class="beneficios__cabecalho">
-                <h2 class="beneficios__titulo">Por que escolher a SiteCriativos?</h2>
+            <div class="secao-titulo">
+                <h2>Por que a SiteCriativos?</h2>
             </div>
             <div class="beneficios__grid">
                 <div class="card-beneficio">
-                    <div class="card-beneficio__icone"><i class="fa-brands fa-google"></i></div>
-                    <h3 class="card-beneficio__titulo">Visibilidade no Google</h3>
-                    <p class="card-beneficio__descricao">Apareça para quem já está procurando pelo seu serviço na sua região e domine o mercado local.</p>
+                    <div style="font-size: 2.5rem; color: var(--indigo); margin-bottom: 20px;"><i class="fa-brands fa-google"></i></div>
+                    <h3 style="margin-bottom: 15px;">Visibilidade no Google</h3>
+                    <p>Seja encontrado por quem já está procurando pelo seu serviço na sua região.</p>
                 </div>
                 <div class="card-beneficio">
-                    <div class="card-beneficio__icone"><i class="fa-solid fa-robot"></i></div>
-                    <h3 class="card-beneficio__titulo">Atendimento Automatizado 24h</h3>
-                    <p class="card-beneficio__descricao">Seu site trabalha para você dia e noite, captando leads e respondendo dúvidas básicas automaticamente.</p>
+                    <div style="font-size: 2.5rem; color: var(--indigo); margin-bottom: 20px;"><i class="fa-solid fa-clock"></i></div>
+                    <h3 style="margin-bottom: 15px;">Atendimento 24h</h3>
+                    <p>Seu site trabalha para você dia e noite, captando leads e tirando dúvidas.</p>
                 </div>
                 <div class="card-beneficio">
-                    <div class="card-beneficio__icone"><i class="fa-solid fa-medal"></i></div>
-                    <h3 class="card-beneficio__titulo">Credibilidade Profissional</h3>
-                    <p class="card-beneficio__descricao">Passe autoridade imediata para seus clientes com um design moderno, limpo e extremamente rápido.</p>
+                    <div style="font-size: 2.5rem; color: var(--indigo); margin-bottom: 20px;"><i class="fa-solid fa-medal"></i></div>
+                    <h3 style="margin-bottom: 15px;">Credibilidade</h3>
+                    <p>Passe autoridade imediata com um design moderno, limpo e profissional.</p>
                 </div>
             </div>
         </div>
@@ -580,9 +304,9 @@
 
     <section class="categorias">
         <div class="container">
-            <div class="beneficios__cabecalho">
-                <h2 class="beneficios__titulo">Soluções para o seu Negócio</h2>
-                <p class="beneficios__subtitulo" style="color: var(--cinza-texto);">Passe o mouse para ver exemplos específicos do seu nicho</p>
+            <div class="secao-titulo">
+                <h2>Soluções para o seu Negócio</h2>
+                <p>Passe o mouse para ver os nichos que atendemos</p>
             </div>
             <div class="categorias__grid">
                 <div class="card-categoria">
@@ -594,7 +318,6 @@
                         <div class="card-categoria__exemplo">Cafeterias</div>
                     </div>
                 </div>
-
                 <div class="card-categoria">
                     <div class="card-categoria__icone"><i class="fa-solid fa-shopping-bag"></i></div>
                     <h3 class="card-categoria__titulo">Varejo</h3>
@@ -604,64 +327,22 @@
                         <div class="card-categoria__exemplo">Acessórios</div>
                     </div>
                 </div>
-
                 <div class="card-categoria">
                     <div class="card-categoria__icone"><i class="fa-solid fa-wrench"></i></div>
                     <h3 class="card-categoria__titulo">Serviços</h3>
                     <div class="card-categoria__exemplos">
-                        <div class="card-categoria__exemplo">Encanadores</div>
+                        <div class="card-categoria__exemplo">Oficinas Mecânicas</div>
                         <div class="card-categoria__exemplo">Eletricistas</div>
-                        <div class="card-categoria__exemplo">Oficinas</div>
+                        <div class="card-categoria__exemplo">Encanadores</div>
                     </div>
                 </div>
-
                 <div class="card-categoria">
                     <div class="card-categoria__icone"><i class="fa-solid fa-spa"></i></div>
                     <h3 class="card-categoria__titulo">Saúde & Estética</h3>
                     <div class="card-categoria__exemplos">
                         <div class="card-categoria__exemplo">Salões de Beleza</div>
-                        <div class="card-categoria__exemplo">Clínicas Dentárias</div>
+                        <div class="card-categoria__exemplo">Clínicas</div>
                         <div class="card-categoria__exemplo">Academias</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="depoimentos">
-        <div class="container">
-            <div class="beneficios__cabecalho">
-                <h2 class="beneficios__titulo">Depoimentos de clientes</h2>
-            </div>
-            <div class="depoimentos__grid">
-                <div class="card-depoimento">
-                    <p class="card-depoimento__texto">"O site mudou o patamar da minha loja. Hoje recebo muito mais contatos pelo WhatsApp vindos do Google."</p>
-                    <div class="card-depoimento__autor">
-                        <div class="card-depoimento__foto"><i class="fa-solid fa-user"></i></div>
-                        <div class="card-depoimento__info">
-                            <h4>João Silva</h4>
-                            <p>Padaria Central</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-depoimento">
-                    <p class="card-depoimento__texto">"Profissionalismo impecável. O site carrega instantaneamente e o design ficou exatamente como eu queria."</p>
-                    <div class="card-depoimento__autor">
-                        <div class="card-depoimento__foto"><i class="fa-solid fa-user"></i></div>
-                        <div class="card-depoimento__info">
-                            <h4>Maria Oliveira</h4>
-                            <p>Clínica Sorriso</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-depoimento">
-                    <p class="card-depoimento__texto">"O investimento se pagou no primeiro mês. A visibilidade que ganhamos foi surpreendente."</p>
-                    <div class="card-depoimento__autor">
-                        <div class="card-depoimento__foto"><i class="fa-solid fa-user"></i></div>
-                        <div class="card-depoimento__info">
-                            <h4>Carlos Santos</h4>
-                            <p>Oficina do Carlos</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -671,10 +352,6 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__logo">Site<span>Criativos</span></div>
-            <div class="footer__contato">
-                <a href="tel:+5511953429077" class="footer__telefone"><i class="fa-solid fa-phone"></i> (11) 95342-9077</a>
-                <a href="https://wa.me/5511953429077" class="footer__telefone"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            </div>
             <p>&copy; 2024 SiteCriativos. Todos os direitos reservados.</p>
         </div>
     </footer>
