@@ -80,12 +80,11 @@
         }
         .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 44px rgba(37, 211, 102, 0.6); }
 
-        /* SEÇÃO DE CATÁLOGO (INTEGRADA) */
+        /* CATÁLOGO */
         .catalogo { padding: 100px 0; background-color: #121212; color: white; }
         .secao-titulo { text-align: center; margin-bottom: 60px; }
         .secao-titulo h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 16px; }
         .secao-titulo h2 span { background: #2563eb; padding: 0 15px; }
-        
         .catalogo__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
         .card-modelo { background: #1e1e1e; border-radius: 16px; overflow: hidden; transition: var(--transicao-suave); display: flex; flex-direction: column; }
         .card-modelo:hover { transform: translateY(-10px); }
@@ -94,7 +93,6 @@
         .card-modelo__titulo { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
         .card-modelo__rating { color: #fbbf24; font-size: 0.9rem; margin-bottom: 15px; display: block; }
         .card-modelo__preco { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; display: block; }
-        
         .btn-comprar {
             width: 100%; padding: 12px; text-align: center; background: var(--whatsapp-verde);
             border-radius: 8px; color: white; text-decoration: none; font-size: 0.9rem;
@@ -107,6 +105,67 @@
         .footer__logo span { color: var(--violeta); }
 
         @media (max-width: 768px) { .hero__titulo { font-size: 1.8rem; } .btn-cta { width: 100%; text-align: center; } }
+
+        /* SEÇÃO GESTÃO INTELIGENTE */
+        .gestao {
+            padding: 100px 0;
+            background: linear-gradient(160deg, #0f0a2e 0%, #1a103c 50%, #121212 100%);
+            color: white;
+        }
+        .gestao__wrapper { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: center; }
+        .gestao__preco-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(124, 58, 237, 0.4);
+            border-radius: var(--raio-borda-grande);
+            padding: 40px 32px; text-align: center;
+            backdrop-filter: blur(12px); position: relative;
+        }
+        .gestao__badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--indigo), var(--violeta));
+            color: white; font-size: 0.8rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2px;
+            padding: 6px 20px; border-radius: 50px; margin-bottom: 24px;
+        }
+        .gestao__preco-valor { display: flex; align-items: flex-start; justify-content: center; gap: 4px; margin-bottom: 16px; }
+        .gestao__cifrao { font-size: 1.4rem; font-weight: 700; color: #a78bfa; margin-top: 12px; }
+        .gestao__numero { font-size: 4.5rem; font-weight: 900; color: white; line-height: 1; }
+        .gestao__periodo { font-size: 1rem; color: #b0b8cc; align-self: flex-end; margin-bottom: 10px; }
+        .gestao__subtitulo { font-size: 0.9rem; color: #b0b8cc; margin-bottom: 28px; line-height: 1.6; }
+        .btn-gestao {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            width: 100%; padding: 16px 24px;
+            background: linear-gradient(135deg, var(--whatsapp-verde), #1ebe5b);
+            color: white; text-decoration: none; border-radius: 12px;
+            font-weight: 700; font-size: 1rem; transition: var(--transicao-bounce);
+            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.35); margin-bottom: 16px;
+        }
+        .btn-gestao:hover { transform: translateY(-3px); box-shadow: 0 14px 44px rgba(37, 211, 102, 0.55); }
+        .gestao__garantia { font-size: 0.8rem; color: #6b7280; }
+        .gestao__garantia i { margin-right: 6px; color: var(--indigo); }
+        .gestao__beneficios-titulo { font-size: 1.3rem; font-weight: 700; color: white; margin-bottom: 28px; }
+        .gestao__beneficio-item { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 28px; }
+        .gestao__beneficio-item h4 { font-size: 1rem; font-weight: 600; color: white; margin-bottom: 4px; }
+        .gestao__beneficio-item p { font-size: 0.88rem; color: #b0b8cc; }
+        .gestao__icone-wrapper {
+            width: 48px; height: 48px; min-width: 48px;
+            background: linear-gradient(135deg, var(--indigo), var(--violeta));
+            border-radius: 12px; display: flex; align-items: center;
+            justify-content: center; font-size: 1.2rem; color: white;
+        }
+        .gestao__publicos { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+        .gestao__publicos span {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #c4c8d6; font-size: 0.82rem; font-weight: 600;
+            padding: 8px 16px; border-radius: 50px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .gestao__publicos span i { color: var(--violeta); }
+        @media (max-width: 768px) {
+            .gestao__wrapper { grid-template-columns: 1fr; }
+            .gestao__preco-card { margin-bottom: 16px; }
+        }
     </style>
 </head>
 <body>
@@ -151,9 +210,7 @@
                 <h2><span>Catálogo de Modelos</span></h2>
                 <p>Escolha o estilo perfeito para o seu negócio</p>
             </div>
-
             <div class="catalogo__grid">
-                <!-- Modelo 1: Studio Beauty -->
                 <div class="card-modelo">
                     <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop" alt="Estética" class="card-modelo__img">
                     <div class="card-modelo__content">
@@ -165,8 +222,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Modelo 2: Gastronomia -->
                 <div class="card-modelo">
                     <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop" alt="Gastronomia" class="card-modelo__img">
                     <div class="card-modelo__content">
@@ -178,8 +233,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Modelo 3: Moda -->
                 <div class="card-modelo">
                     <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=800&auto=format&fit=crop" alt="Moda" class="card-modelo__img">
                     <div class="card-modelo__content">
@@ -189,6 +242,68 @@
                         <a href="https://wa.me/5511953429077?text=Tenho%20interesse%20no%20modelo%20Boutique" class="btn-comprar" target="_blank">
                             <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: GESTÃO INTELIGENTE DE NEGÓCIOS -->
+    <section class="gestao" id="gestao">
+        <div class="container">
+            <div class="secao-titulo">
+                <h2><span>Gestão Inteligente de Negócios</span></h2>
+                <p>Uma solução completa, adaptável a qualquer tipo de negócio — comércio, serviços ou gestão interna</p>
+            </div>
+            <div class="gestao__wrapper">
+                <div class="gestao__preco-card">
+                    <div class="gestao__badge">Plano Essencial</div>
+                    <div class="gestao__preco-valor">
+                        <span class="gestao__cifrao">R$</span>
+                        <span class="gestao__numero">70</span>
+                        <span class="gestao__periodo">/mês</span>
+                    </div>
+                    <p class="gestao__subtitulo">Tecnologia de alto nível sem complicação. Comece hoje e veja resultados reais.</p>
+                    <a href="https://wa.me/5511953429077?text=Quero%20contratar%20o%20Plano%20Essencial%20de%20Gest%C3%A3o%20Inteligente%20de%20Neg%C3%B3cios" class="btn-gestao" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Contratar Agora
+                    </a>
+                    <p class="gestao__garantia"><i class="fa-solid fa-shield-halved"></i> Sem fidelidade — cancele quando quiser</p>
+                </div>
+                <div class="gestao__beneficios">
+                    <h3 class="gestao__beneficios-titulo">O que está incluído</h3>
+                    <div class="gestao__beneficio-item">
+                        <div class="gestao__icone-wrapper"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            <h4>Dashboard de métricas em tempo real</h4>
+                            <p>Visualize os indicadores do seu negócio de qualquer lugar, a qualquer hora.</p>
+                        </div>
+                    </div>
+                    <div class="gestao__beneficio-item">
+                        <div class="gestao__icone-wrapper"><i class="fa-solid fa-gears"></i></div>
+                        <div>
+                            <h4>Automação de processos operacionais</h4>
+                            <p>Reduza tarefas manuais e ganhe tempo para focar no que importa.</p>
+                        </div>
+                    </div>
+                    <div class="gestao__beneficio-item">
+                        <div class="gestao__icone-wrapper"><i class="fa-solid fa-database"></i></div>
+                        <div>
+                            <h4>Gestão de dados integrada</h4>
+                            <p>Seus dados organizados, seguros e sempre acessíveis em um único lugar.</p>
+                        </div>
+                    </div>
+                    <div class="gestao__beneficio-item">
+                        <div class="gestao__icone-wrapper"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h4>Infraestrutura Serverless de alta performance</h4>
+                            <p>Tecnologia escalável que cresce junto com o seu negócio, sem custo extra.</p>
+                        </div>
+                    </div>
+                    <div class="gestao__publicos">
+                        <span><i class="fa-solid fa-store"></i> Comércio</span>
+                        <span><i class="fa-solid fa-briefcase"></i> Serviços</span>
+                        <span><i class="fa-solid fa-building"></i> Gestão Interna</span>
                     </div>
                 </div>
             </div>
@@ -206,60 +321,42 @@
                     <p style="font-style: italic; margin-bottom: 24px; color: var(--cinza-texto);">"O site mudou o patamar da minha loja. Hoje recebo muito mais contatos pelo WhatsApp vindos do Google."</p>
                     <div style="display: flex; align-items: center; gap: 16px;">
                         <div style="width: 50px; height: 50px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-user"></i></div>
-                        <div>
-                            <h4 style="color: var(--titulo-escuro);">João Silva</h4>
-                            <p style="font-size: 0.85rem;">Padaria Central</p>
-                        </div>
+                        <div><h4 style="color: var(--titulo-escuro);">João Silva</h4><p style="font-size: 0.85rem;">Padaria Central</p></div>
                     </div>
                 </div>
                 <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: var(--sombra-card);">
                     <p style="font-style: italic; margin-bottom: 24px; color: var(--cinza-texto);">"Profissionalismo impecável. O site carrega instantaneamente e o design ficou exatamente como eu queria."</p>
                     <div style="display: flex; align-items: center; gap: 16px;">
                         <div style="width: 50px; height: 50px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-user"></i></div>
-                        <div>
-                            <h4 style="color: var(--titulo-escuro);">Maria Oliveira</h4>
-                            <p style="font-size: 0.85rem;">Clínica Sorriso</p>
-                        </div>
+                        <div><h4 style="color: var(--titulo-escuro);">Maria Oliveira</h4><p style="font-size: 0.85rem;">Clínica Sorriso</p></div>
                     </div>
                 </div>
                 <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: var(--sombra-card);">
                     <p style="font-style: italic; margin-bottom: 24px; color: var(--cinza-texto);">"O investimento se pagou no primeiro mês. A visibilidade que ganhamos foi surpreendente."</p>
                     <div style="display: flex; align-items: center; gap: 16px;">
                         <div style="width: 50px; height: 50px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-user"></i></div>
-                        <div>
-                            <h4 style="color: var(--titulo-escuro);">Carlos Santos</h4>
-                            <p style="font-size: 0.85rem;">Oficina do Carlos</p>
-                        </div>
+                        <div><h4 style="color: var(--titulo-escuro);">Carlos Santos</h4><p style="font-size: 0.85rem;">Oficina do Carlos</p></div>
                     </div>
                 </div>
                 <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: var(--sombra-card);">
                     <p style="font-style: italic; margin-bottom: 24px; color: var(--cinza-texto);">"Excelente suporte! Meu site ficou pronto em tempo recorde e o atendimento foi nota 10."</p>
                     <div style="display: flex; align-items: center; gap: 16px;">
                         <div style="width: 50px; height: 50px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-user"></i></div>
-                        <div>
-                            <h4 style="color: var(--titulo-escuro);">Fernanda Lima</h4>
-                            <p style="font-size: 0.85rem;">Boutique Chic</p>
-                        </div>
+                        <div><h4 style="color: var(--titulo-escuro);">Fernanda Lima</h4><p style="font-size: 0.85rem;">Boutique Chic</p></div>
                     </div>
                 </div>
                 <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: var(--sombra-card);">
                     <p style="font-style: italic; margin-bottom: 24px; color: var(--cinza-texto);">"O agendamento online facilitou muito a minha vida e a dos meus clientes. Recomendo demais!"</p>
                     <div style="display: flex; align-items: center; gap: 16px;">
                         <div style="width: 50px; height: 50px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-user"></i></div>
-                        <div>
-                            <h4 style="color: var(--titulo-escuro);">Ricardo Alves</h4>
-                            <p style="font-size: 0.85rem;">Barbearia Premium</p>
-                        </div>
+                        <div><h4 style="color: var(--titulo-escuro);">Ricardo Alves</h4><p style="font-size: 0.85rem;">Barbearia Premium</p></div>
                     </div>
                 </div>
                 <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: var(--sombra-card);">
                     <p style="font-style: italic; margin-bottom: 24px; color: var(--cinza-texto);">"Não sabia que ter um site profissional era tão acessível. O resultado superou minhas expectativas."</p>
                     <div style="display: flex; align-items: center; gap: 16px;">
                         <div style="width: 50px; height: 50px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-user"></i></div>
-                        <div>
-                            <h4 style="color: var(--titulo-escuro);">Patrícia Costa</h4>
-                            <p style="font-size: 0.85rem;">Pet Shop Amigo</p>
-                        </div>
+                        <div><h4 style="color: var(--titulo-escuro);">Patrícia Costa</h4><p style="font-size: 0.85rem;">Pet Shop Amigo</p></div>
                     </div>
                 </div>
             </div>
