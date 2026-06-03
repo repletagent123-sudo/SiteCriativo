@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SiteCriativos - Sites Profissionais para Comerciantes Locais</title>
 
+    <!-- Fontes e Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
+        /* RESET DE ESTILOS E VARIÁVEIS DE DESIGN */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
@@ -23,7 +25,7 @@
             --titulo-escuro: #1a103c;
             --whatsapp-verde: #25D366;
             --whatsapp-verde-hover: #1ebe5b;
-            --sombra-card: 0 8px 32px rgba(79, 70, 229, 0.08);
+            --sombra-card: 0 12px 32px rgba(79, 70, 229, 0.06);
             --raio-borda-grande: 24px;
             --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transicao-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -41,7 +43,7 @@
 
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-        /* HEADER */
+        /* HEADER MODERNO */
         .header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
             padding: 14px 0; background-color: rgba(255, 255, 255, 0.85);
@@ -57,10 +59,17 @@
         }
         .header__logo-texto { font-size: 1.35rem; font-weight: 700; color: var(--roxo-escuro); }
         .header__logo-texto span { color: var(--violeta); }
-        .header .btn-cta { padding: 10px 20px; font-size: 0.9rem; border-radius: 50px; background: linear-gradient(135deg, var(--indigo), var(--violeta)); box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25); }
-        .header .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4); }
+        
+        .header .btn-cta-nav { 
+            padding: 10px 24px; 
+            font-size: 0.9rem; 
+            border-radius: 50px; 
+            background: linear-gradient(135deg, var(--indigo), var(--violeta)); 
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25); 
+        }
+        .header .btn-cta-nav:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4); }
 
-        /* HERO */
+        /* HERO SECTION */
         .hero {
             padding: 160px 0 100px;
             background: linear-gradient(160deg, #1a103c 0%, #2d1b69 30%, #1e1b4b 60%, #0f0a2e 100%);
@@ -79,51 +88,50 @@
         }
         .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 44px rgba(37, 211, 102, 0.6); }
 
-        /* HERO CTA WRAPPER */
+        /* CARD DE PREÇO HERO */
         .hero__cta-wrapper {
             display: inline-flex;
             flex-direction: column;
             align-items: center;
-            gap: 16px;
+            gap: 20px;
         }
-        .hero__preco-card { display: block; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--raio-borda-grande); padding: 24px 48px; backdrop-filter: blur(12px); }
-        .hero__preco-tag { font-size: 0.85rem; color: #b0b8cc; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
-        .hero__preco-valor { font-size: clamp(2.8rem, 6vw, 4.2rem); font-weight: 900; color: #ffffff; line-height: 1; }
+        .hero__preco-card { display: block; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--raio-borda-grande); padding: 24px 56px; backdrop-filter: blur(12px); }
+        .hero__preco-tag { font-size: 0.85rem; color: #b0b8cc; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+        .hero__preco-valor { font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 900; color: #ffffff; line-height: 1; }
         .hero__preco-valor .cifrao { font-size: 0.5em; vertical-align: super; color: #a78bfa; margin-right: 2px; }
         .hero__preco-centavos { font-size: 0.4em; color: #c4b5fd; vertical-align: super; }
-        .hero__preco-obs { margin-top: 6px; font-size: 0.8rem; color: #a3aede; font-weight: 500; }
+        .hero__preco-obs { margin-top: 6px; font-size: 0.85rem; color: #a3aede; font-weight: 500; }
         .btn-cta--hero {
             border-radius: 50px;
             justify-content: center;
-            padding: 18px 36px;
+            padding: 18px 44px;
             font-size: 1.1rem;
         }
 
-        /* SEÇÃO TITULO GLOBAL */
+        /* TÍTULOS GLOBAIS DAS SEÇÕES */
         .secao-titulo { text-align: center; margin-bottom: 60px; }
         .secao-titulo h2 { font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 800; color: var(--titulo-escuro); margin-bottom: 16px; line-height: 1.2; }
         .secao-titulo p { font-size: clamp(1rem, 1.8vw, 1.15rem); color: var(--cinza-texto); max-width: 650px; margin: 0 auto; }
 
-        /* CATÁLOGO */
+        /* SEÇÃO CATÁLOGO */
         .catalogo { padding: 100px 0; background-color: var(--cinza-claro); }
-        .catalogo .secao-titulo h2 { color: var(--titulo-escuro); }
         .catalogo__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
-        .card-modelo { background: var(--branco); border-radius: 20px; overflow: hidden; transition: var(--transicao-suave); display: flex; flex-direction: column; box-shadow: var(--sombra-card); border: 1px solid rgba(79, 70, 229, 0.04); }
-        .card-modelo:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15); }
+        .card-modelo { background: var(--branco); border-radius: 20px; overflow: hidden; transition: var(--transicao-suave); display: flex; flex-direction: column; box-shadow: var(--sombra-card); border: 1px solid rgba(79, 70, 229, 0.03); }
+        .card-modelo:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(79, 70, 229, 0.12); }
         .card-modelo__img { width: 100%; height: 220px; object-fit: cover; }
         .card-modelo__content { padding: 28px; flex-grow: 1; display: flex; flex-direction: column; }
         .card-modelo__titulo { font-size: 1.35rem; font-weight: 700; color: var(--titulo-escuro); margin-bottom: 8px; }
-        .card-modelo__rating { color: #fbbf24; font-size: 0.88rem; font-weight: 500; margin-bottom: 16px; display: block; }
+        .card-modelo__rating { color: #fbbf24; font-size: 0.88rem; font-weight: 500; margin-bottom: 20px; display: block; }
         .card-modelo__rating i { margin-right: 4px; }
         .card-modelo__preco { font-size: 1.5rem; font-weight: 800; color: var(--indigo); margin-bottom: 24px; display: block; margin-top: auto; }
         .btn-comprar {
             width: 100%; padding: 14px; text-align: center; background: linear-gradient(135deg, var(--whatsapp-verde), #1ebe5b);
             border-radius: 50px; color: white; text-decoration: none; font-size: 1rem;
-            font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); transition: var(--transicao-suave);
+            font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25); transition: var(--transicao-suave);
         }
-        .btn-comprar:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45); }
+        .btn-comprar:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); }
 
-        /* GESTÃO INTELIGENTE */
+        /* SEÇÃO GESTÃO INTELIGENTE */
         .gestao { padding: 100px 0; background: linear-gradient(160deg, #0f0a2e 0%, #1a103c 50%, #121212 100%); color: white; }
         .gestao .secao-titulo h2 { color: white; }
         .gestao .secao-titulo p { color: #b0b8cc; }
@@ -148,16 +156,17 @@
         .gestao__publicos span { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #d1d5db; font-size: 0.85rem; font-weight: 600; padding: 8px 18px; border-radius: 50px; display: flex; align-items: center; gap: 8px; }
         .gestao__publicos span i { color: #a78bfa; }
 
-        /* DEPOIMENTOS */
+        /* SEÇÃO DEPOIMENTOS REMODELADA */
         .depoimentos { padding: 100px 0; background-color: var(--branco); }
+        .depoimentos .secao-titulo h2 { color: var(--titulo-escuro); }
         .depoimentos__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
-        .card-depoimento { background: var(--branco); padding: 36px; border-radius: 20px; box-shadow: var(--sombra-card); border: 1px solid rgba(79, 70, 229, 0.03); transition: var(--transicao-suave); }
-        .card-depoimento:hover { transform: translateY(-5px); }
+        .card-depoimento { background: var(--branco); padding: 36px; border-radius: 20px; box-shadow: var(--sombra-card); border: 1px solid rgba(79, 70, 229, 0.02); transition: var(--transicao-suave); }
+        .card-depoimento:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(79, 70, 229, 0.1); }
         .card-depoimento__texto { font-style: italic; margin-bottom: 28px; color: var(--cinza-texto); font-size: 0.95rem; line-height: 1.7; }
         .card-depoimento__autor { display: flex; align-items: center; gap: 16px; }
-        .card-depoimento__avatar { width: 52px; height: 52px; background: var(--cinza-claro); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--indigo); font-size: 1.2rem; border: 1px solid rgba(79, 70, 229, 0.1); }
+        .card-depoimento__avatar { width: 52px; height: 52px; background: var(--cinza-claro); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--indigo); font-size: 1.2rem; border: 1px solid rgba(79, 70, 229, 0.08); }
         .card-depoimento__nome { font-size: 1.05rem; font-weight: 700; color: var(--titulo-escuro); margin-bottom: 2px; }
-        .card-depoimento__empresa { font-size: 0.82rem; color: var(--cinza-texto); font-weight: 500; }
+        .card-depoimento__empresa { font-size: 0.85rem; color: var(--cinza-texto); font-weight: 500; }
 
         /* FOOTER */
         .footer { background-color: #0f0a1e; color: #b0b8cc; padding: 60px 0 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -165,7 +174,7 @@
         .footer__logo span { color: var(--violeta); }
         .footer p { font-size: 0.9rem; color: #7c8ba1; }
 
-        /* BOTÃO FLUTUANTE WHATSAPP */
+        /* BOTÃO FLUTUANTE DO WHATSAPP */
         .whatsapp-float {
             position: fixed; bottom: 28px; right: 28px; z-index: 9999;
             width: 60px; height: 60px; background: #25D366; border-radius: 50%;
@@ -184,7 +193,7 @@
             100% { transform: scale(1.7); opacity: 0; }
         }
 
-        /* RESPONSIVIDADE */
+        /* RESPONSIVIDADE EM DISPOSITIVOS MÓVEIS */
         @media (max-width: 992px) {
             .gestao__wrapper { grid-template-columns: 1fr; gap: 48px; }
             .gestao__preco-card { max-width: 450px; margin: 0 auto; }
@@ -199,16 +208,18 @@
 </head>
 <body>
 
+    <!-- CABEÇALHO -->
     <header class="header" id="header">
         <div class="container">
             <a href="#" class="header__logo">
                 <div class="header__logo-icone">SC</div>
                 <span class="header__logo-texto">Site<span>Criativos</span></span>
             </a>
-            <a href="#catalogo" class="btn-cta">Ver Modelos</a>
+            <a href="#catalogo" class="btn-cta btn-cta-nav">Ver Modelos</a>
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero__grid-pontos"></div>
         <div class="container">
@@ -233,6 +244,7 @@
         </div>
     </section>
 
+    <!-- SEÇÃO CATÁLOGO -->
     <section class="catalogo" id="catalogo">
         <div class="container">
             <div class="secao-titulo">
@@ -277,6 +289,7 @@
         </div>
     </section>
 
+    <!-- SEÇÃO GESTÃO INTELIGENTE -->
     <section class="gestao" id="gestao">
         <div class="container">
             <div class="secao-titulo">
@@ -338,6 +351,7 @@
         </div>
     </section>
 
+    <!-- SEÇÃO DEPOIMENTOS -->
     <section class="depoimentos" id="depoimentos">
         <div class="container">
             <div class="secao-titulo">
@@ -409,11 +423,13 @@
         </div>
     </section>
 
+    <!-- BOTÃO FIXO WHATSAPP -->
     <a href="https://wa.me/5511953429077" class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
         <div class="whatsapp-float__pulse"></div>
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- RODAPÉ -->
     <footer class="footer">
         <div class="container">
             <div class="footer__logo">Site<span>Criativos</span></div>
@@ -421,6 +437,7 @@
         </div>
     </footer>
 
+    <!-- EXECUÇÃO DE ROLAGEM -->
     <script>
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
