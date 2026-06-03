@@ -10,7 +10,6 @@
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
         *{margin:0;padding:0;box-sizing:border-box}
         :root{--roxo-escuro:#1a103c;--indigo:#4f46e5;--violeta:#7c3aed;--branco:#ffffff;--cinza-claro:#f8f9fc;--cinza-texto:#5a5d6e;--titulo-escuro:#1a103c;--whatsapp:#25D366;--whatsapp-hover:#1ebe5b;--sombra:0 12px 32px rgba(79,70,229,0.06);--sombra-hover:0 20px 48px rgba(79,70,229,0.14);--raio:20px;--transicao:all .35s cubic-bezier(.4,0,.2,1);--bounce:all .45s cubic-bezier(.175,.885,.32,1.275)}
         html{scroll-behavior:smooth;font-size:16px}
