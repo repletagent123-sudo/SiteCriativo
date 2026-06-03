@@ -7,28 +7,18 @@
     <meta name="description" content="Sites profissionais a partir de R$450 e Gestão Inteligente por R$80/mês. Transforme seu comércio local em máquina de vendas.">
     <meta property="og:title" content="SiteCriativos — Sites Profissionais para Comerciantes">
     <meta property="og:description" content="Sites a partir de R$450 + Gestão Inteligente R$80/mês. Aumente suas vendas agora.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        :root{
-            --roxo-escuro:#1a103c;--indigo:#4f46e5;--violeta:#7c3aed;--branco:#ffffff;
-            --cinza-claro:#f8f9fc;--cinza-texto:#5a5d6e;--titulo-escuro:#1a103c;
-            --whatsapp:#25D366;--whatsapp-hover:#1ebe5b;
-            --sombra:0 12px 32px rgba(79,70,229,0.06);--sombra-hover:0 20px 48px rgba(79,70,229,0.14);
-            --raio:20px;--transicao:all .35s cubic-bezier(.4,0,.2,1);
-            --bounce:all .45s cubic-bezier(.175,.885,.32,1.275);
-        }
+        :root{--roxo-escuro:#1a103c;--indigo:#4f46e5;--violeta:#7c3aed;--branco:#ffffff;--cinza-claro:#f8f9fc;--cinza-texto:#5a5d6e;--titulo-escuro:#1a103c;--whatsapp:#25D366;--whatsapp-hover:#1ebe5b;--sombra:0 12px 32px rgba(79,70,229,0.06);--sombra-hover:0 20px 48px rgba(79,70,229,0.14);--raio:20px;--transicao:all .35s cubic-bezier(.4,0,.2,1);--bounce:all .45s cubic-bezier(.175,.885,.32,1.275)}
         html{scroll-behavior:smooth;font-size:16px}
         body{font-family:'Poppins',sans-serif;background:var(--branco);color:var(--cinza-texto);line-height:1.6;overflow-x:hidden}
         .container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
-
-        /* SCROLLBAR */
         ::-webkit-scrollbar{width:8px}
         ::-webkit-scrollbar-track{background:#f1f1f1}
         ::-webkit-scrollbar-thumb{background:linear-gradient(var(--indigo),var(--violeta));border-radius:10px}
-
-        /* HEADER */
         .header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:14px 0;background:rgba(255,255,255,.88);backdrop-filter:blur(20px);transition:var(--transicao)}
         .header.scrolled{background:rgba(255,255,255,.97);box-shadow:0 4px 30px rgba(0,0,0,.1)}
         .header .container{display:flex;align-items:center;justify-content:space-between}
@@ -43,8 +33,6 @@
         .btn-nav{padding:10px 26px;background:linear-gradient(135deg,var(--indigo),var(--violeta));color:var(--branco)!important;border-radius:50px;font-weight:700;font-size:.9rem;box-shadow:0 4px 18px rgba(124,58,237,.3);text-decoration:none;transition:var(--bounce)}
         .btn-nav:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(124,58,237,.45)}
         .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--roxo-escuro);cursor:pointer}
-
-        /* HERO */
         .hero{padding:170px 0 100px;background:linear-gradient(165deg,#1a103c 0%,#2d1b69 25%,#1e1b4b 55%,#0a0620 100%);position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center}
         .hero__bg{position:absolute;inset:0}
         .hero__bg::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:50px 50px}
@@ -68,18 +56,13 @@
         .hero__trust-avatars{display:flex}
         .hero__trust-avatars span{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--indigo),var(--violeta));border:2px solid #1a103c;display:flex;align-items:center;justify-content:center;color:var(--branco);font-size:.7rem;font-weight:700;margin-left:-8px}
         .hero__trust-avatars span:first-child{margin-left:0}
-
-        /* PROOF BAR */
         .proof-bar{background:linear-gradient(90deg,var(--indigo),var(--violeta));padding:16px 0;text-align:center;color:var(--branco);font-size:.9rem;font-weight:600}
         .proof-bar i{margin:0 6px;color:#c4b5fd}
-
-        /* SERVIÇOS */
-        .servicos{padding:100px 0;background:var(--cinza-claro)}
         .section-header{text-align:center;margin-bottom:60px}
         .section-header h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:var(--titulo-escuro);margin-bottom:14px}
         .section-header p{font-size:clamp(.95rem,1.8vw,1.1rem);color:var(--cinza-texto);max-width:600px;margin:0 auto}
         .section-header .tag{display:inline-block;background:linear-gradient(135deg,rgba(79,70,229,.1),rgba(124,58,237,.1));color:var(--indigo);padding:6px 18px;border-radius:50px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;border:1px solid rgba(79,70,229,.15)}
-
+        .servicos{padding:100px 0;background:var(--cinza-claro)}
         .servicos__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:32px}
         .servico-card{background:var(--branco);border-radius:var(--raio);overflow:hidden;box-shadow:var(--sombra);border:1px solid rgba(79,70,229,.04);transition:var(--transicao);position:relative}
         .servico-card:hover{transform:translateY(-12px);box-shadow:var(--sombra-hover)}
@@ -103,16 +86,10 @@
         .servico-card__price .obs{font-size:.75rem;color:#8892b0;display:block;margin-top:4px;font-weight:500}
         .btn-servico{width:100%;padding:16px;text-align:center;background:linear-gradient(135deg,var(--whatsapp),var(--whatsapp-hover));border-radius:50px;color:var(--branco);text-decoration:none;font-size:1rem;font-weight:800;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 24px rgba(37,211,102,.3);transition:var(--bounce)}
         .btn-servico:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,211,102,.45)}
-        .btn-servico--outline{background:transparent;border:2px solid var(--indigo);color:var(--indigo);box-shadow:none}
-        .btn-servico--outline:hover{background:linear-gradient(135deg,var(--indigo),var(--violeta));color:var(--branco);border-color:transparent}
-
-        /* URGENCY BAR */
         .urgency{background:linear-gradient(135deg,var(--roxo-escuro),#2d1b69);padding:60px 0;text-align:center;color:var(--branco)}
         .urgency h3{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:12px}
         .urgency p{color:#b0b8cc;margin-bottom:28px;font-size:1.05rem}
         .urgency .btn-whatsapp{padding:16px 36px;font-size:1rem}
-
-        /* COMO FUNCIONA */
         .como-funciona{padding:100px 0;background:var(--branco)}
         .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px;margin-top:50px}
         .step{text-align:center;position:relative}
@@ -122,8 +99,30 @@
         .step__num::before{content:attr(data-step);position:absolute;font-size:3rem;font-weight:900;opacity:.08;top:50%;left:50%;transform:translate(-50%,-50%)}
         .step__title{font-size:1.15rem;font-weight:700;color:var(--titulo-escuro);margin-bottom:8px}
         .step__desc{font-size:.88rem;color:var(--cinza-texto);line-height:1.6}
-
-        /* DEPOIMENTOS */
+        .comercios{padding:100px 0;background:var(--cinza-claro)}
+        .comercios__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
+        .comercio-card{background:var(--branco);border-radius:var(--raio);overflow:hidden;box-shadow:var(--sombra);border:1px solid rgba(79,70,229,.04);transition:var(--transicao);position:relative}
+        .comercio-card:hover{transform:translateY(-10px);box-shadow:var(--sombra-hover)}
+        .comercio-card__img-wrap{position:relative;height:220px;overflow:hidden}
+        .comercio-card__img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+        .comercio-card:hover .comercio-card__img{transform:scale(1.08)}
+        .comercio-card__overlay{position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(26,16,60,.85));display:flex;align-items:flex-end;padding:20px}
+        .comercio-card__categoria{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.95);padding:5px 14px;border-radius:50px;font-size:.72rem;font-weight:700;color:var(--indigo);text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(10px)}
+        .comercio-card__nome{color:var(--branco);font-size:1.3rem;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+        .comercio-card__body{padding:24px}
+        .comercio-card__desc{font-size:.88rem;color:var(--cinza-texto);line-height:1.7;margin-bottom:16px;min-height:60px}
+        .comercio-card__tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+        .comercio-card__tags span{background:rgba(79,70,229,.06);color:var(--indigo);padding:4px 12px;border-radius:50px;font-size:.72rem;font-weight:600}
+        .comercio-card__footer{display:flex;align-items:center;justify-content:space-between}
+        .comercio-card__status{display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--whatsapp)}
+        .comercio-card__status i{font-size:.6rem;animation:pulse-dot 2s infinite}
+        @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+        .btn-ver-site{padding:10px 20px;background:linear-gradient(135deg,var(--indigo),var(--violeta));color:var(--branco);text-decoration:none;border-radius:50px;font-size:.82rem;font-weight:700;transition:var(--bounce);box-shadow:0 4px 15px rgba(79,70,229,.25)}
+        .btn-ver-site:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(79,70,229,.4)}
+        .filtros{padding:40px 0 20px;background:var(--cinza-claro);border-bottom:1px solid rgba(79,70,229,.06)}
+        .filtros__wrap{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+        .filtro-btn{padding:10px 24px;border-radius:50px;border:1px solid rgba(79,70,229,.15);background:var(--branco);color:var(--cinza-texto);font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;transition:var(--transicao)}
+        .filtro-btn:hover,.filtro-btn.active{background:linear-gradient(135deg,var(--indigo),var(--violeta));color:var(--branco);border-color:transparent;box-shadow:0 4px 15px rgba(79,70,229,.25)}
         .depoimentos{padding:100px 0;background:linear-gradient(180deg,var(--cinza-claro),var(--branco))}
         .depoimentos__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
         .depo-card{background:var(--branco);padding:32px;border-radius:var(--raio);box-shadow:var(--sombra);border:1px solid rgba(79,70,229,.03);transition:var(--transicao);position:relative}
@@ -135,8 +134,14 @@
         .depo-card__avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--indigo),var(--violeta));display:flex;align-items:center;justify-content:center;color:var(--branco);font-weight:700;font-size:1rem}
         .depo-card__name{font-size:1rem;font-weight:700;color:var(--titulo-escuro)}
         .depo-card__biz{font-size:.82rem;color:var(--cinza-texto);font-weight:500}
-
-        /* CTA FINAL */
+        .faq{padding:100px 0;background:var(--cinza-claro)}
+        .faq__item{background:var(--branco);border-radius:var(--raio);padding:24px 32px;margin-bottom:16px;box-shadow:var(--sombra);cursor:pointer;transition:var(--transicao)}
+        .faq__item:hover{box-shadow:0 8px 24px rgba(79,70,229,.1)}
+        .faq__pergunta{font-size:1.1rem;font-weight:600;color:var(--titulo-escuro);display:flex;justify-content:space-between;align-items:center}
+        .faq__pergunta i{transition:transform .3s}
+        .faq__resposta{max-height:0;overflow:hidden;transition:max-height .4s ease,padding-top .3s ease;color:var(--cinza-texto);font-size:.95rem;line-height:1.6}
+        .faq__item.active .faq__resposta{max-height:300px;padding-top:16px}
+        .faq__item.active .faq__pergunta i{transform:rotate(180deg)}
         .cta-final{padding:100px 0;background:linear-gradient(165deg,#1a103c,#2d1b69,#1e1b4b);text-align:center;position:relative;overflow:hidden}
         .cta-final::before{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.12),transparent 70%);top:-150px;left:-150px;border-radius:50%}
         .cta-final .container{position:relative;z-index:2}
@@ -145,8 +150,6 @@
         .cta-final .btn-whatsapp{padding:20px 48px;font-size:1.15rem}
         .cta-final__garantia{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;color:#8892b0;font-size:.85rem}
         .cta-final__garantia i{color:#a78bfa}
-
-        /* FOOTER */
         .footer{background:#0a0620;color:#8892b0;padding:60px 0 24px}
         .footer__top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px;margin-bottom:40px}
         .footer__brand .logo__text{color:var(--branco);margin-bottom:12px;display:block}
@@ -155,22 +158,16 @@
         .footer__links a{display:block;color:#8892b0;text-decoration:none;font-size:.85rem;margin-bottom:10px;transition:color .3s}
         .footer__links a:hover{color:var(--violeta)}
         .footer__bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:.82rem}
-
-        /* WHATSAPP FLOAT */
         .wpp-float{position:fixed;bottom:24px;right:24px;z-index:9999;width:60px;height:60px;background:var(--whatsapp);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.5);transition:var(--bounce);text-decoration:none}
         .wpp-float:hover{transform:scale(1.12) translateY(-3px);box-shadow:0 12px 36px rgba(37,211,102,.65)}
         .wpp-float i{font-size:1.9rem;color:var(--branco)}
         .wpp-float__pulse{position:absolute;width:100%;height:100%;border-radius:50%;background:rgba(37,211,102,.4);animation:pulse 2s ease-out infinite}
         @keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
-
-        /* ANIMATIONS */
+        .back-to-top{position:fixed;bottom:100px;right:24px;width:48px;height:48px;background:linear-gradient(135deg,var(--indigo),var(--violeta));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--branco);text-decoration:none;opacity:0;visibility:hidden;transition:all .3s ease;z-index:9998;box-shadow:0 4px 15px rgba(79,70,229,.3)}
+        .back-to-top.visible{opacity:1;visibility:visible}
+        .back-to-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(79,70,229,.4)}
         .fade-up{opacity:0;transform:translateY(40px);transition:all .7s ease-out}
         .fade-up.visible{opacity:1;transform:translateY(0)}
-        .fade-up:nth-child(2){transition-delay:.1s}
-        .fade-up:nth-child(3){transition-delay:.2s}
-        .fade-up:nth-child(4){transition-delay:.3s}
-
-        /* RESPONSIVE */
         @media(max-width:768px){
             .nav-links{display:none}
             .menu-toggle{display:block}
@@ -180,6 +177,9 @@
             .steps{grid-template-columns:1fr}
             .step:not(:last-child)::after{display:none}
             .footer__top{flex-direction:column}
+            .comercios__grid{grid-template-columns:1fr}
+            .filtros__wrap{gap:8px}
+            .filtro-btn{padding:8px 16px;font-size:.8rem}
         }
     </style>
 <base target="_blank">
@@ -195,8 +195,10 @@
         <nav class="nav-links">
             <a href="#servicos">Serviços</a>
             <a href="#como-funciona">Como Funciona</a>
+            <a href="#comercios">Comércios</a>
             <a href="#depoimentos">Depoimentos</a>
-            <a href="comercios.html" class="btn-nav">Ver Comércios</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://wa.me/5511953429077" class="btn-nav">Falar no WhatsApp</a>
         </nav>
         <button class="menu-toggle" onclick="alert('Menu mobile em desenvolvimento')">☰</button>
     </div>
@@ -218,9 +220,7 @@
                 <i class="fa-brands fa-whatsapp"></i> Quero aumentar minhas vendas
             </a>
             <div class="hero__trust">
-                <div class="hero__trust-avatars">
-                    <span>JS</span><span>MO</span><span>CS</span>
-                </div>
+                <div class="hero__trust-avatars"><span>JS</span><span>MO</span><span>CS</span></div>
                 <span>+150 comerciantes já confiam</span>
             </div>
         </div>
@@ -239,7 +239,6 @@
             <p>Do site profissional à gestão completa. Cresça online com quem entende de comércio local.</p>
         </div>
         <div class="servicos__grid">
-            <!-- SERVIÇO 1: SITES -->
             <div class="servico-card fade-up">
                 <div class="servico-card__img-wrap">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Site Profissional" class="servico-card__img" loading="lazy">
@@ -264,7 +263,6 @@
                     </a>
                 </div>
             </div>
-            <!-- SERVIÇO 2: GESTÃO -->
             <div class="servico-card fade-up">
                 <div class="servico-card__popular">MAIS VENDIDO</div>
                 <div class="servico-card__img-wrap">
@@ -336,6 +334,236 @@
         </div>
     </div>
 </section>
+<section class="comercios" id="comercios">
+    <div class="container">
+        <div class="section-header">
+            <span class="tag">Portfólio</span>
+            <h2>Comércios que cresceram com a gente</h2>
+            <p>Conheça os negócios locais que transformaram sua presença online.</p>
+        </div>
+        <div class="filtros">
+            <div class="filtros__wrap">
+                <button class="filtro-btn active" onclick="filter('todos')">Todos</button>
+                <button class="filtro-btn" onclick="filter('estetica')">Estética</button>
+                <button class="filtro-btn" onclick="filter('gastronomia')">Gastronomia</button>
+                <button class="filtro-btn" onclick="filter('moda')">Moda</button>
+                <button class="filtro-btn" onclick="filter('servicos')">Serviços</button>
+                <button class="filtro-btn" onclick="filter('saude')">Saúde</button>
+            </div>
+        </div>
+        <div class="comercios__grid" id="grid">
+
+            <div class="comercio-card fade-up" data-cat="estetica">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://kimi-web-img.moonshot.cn/img/media.istockphoto.com/7e318c965b86b98bf5bae15cfdcdfab4b00f64c0.jpg" alt="Studio Bella Estética" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Estética</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Studio Bella</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Clínica de estética facial e corporal. Site com agendamento online, galeria de procedimentos e integração com Instagram.</p>
+                    <div class="comercio-card__tags"><span>Agendamento</span><span>Galeria</span><span>SEO</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20ao%20Studio%20Bella" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="estetica">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://kimi-web-img.moonshot.cn/img/cdn.thecoolist.com/1e3a34fb4ce170e0f80434a8da61290d3b736ace.jpg" alt="Spa Relax Estética" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Estética</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Spa Relax</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Spa terapêutico com massagens e tratamentos relaxantes. Design sofisticado que transmite tranquilidade e bem-estar.</p>
+                    <div class="comercio-card__tags"><span>Reservas</span><span>Depoimentos</span><span>Blog</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20ao%20Spa%20Relax" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="gastronomia">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" alt="Sabor & Arte Restaurante" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Gastronomia</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Sabor & Arte</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Restaurante contemporâneo com cardápio digital, reserva de mesas e integração com delivery.</p>
+                    <div class="comercio-card__tags"><span>Cardápio</span><span>Reservas</span><span>Delivery</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20ao%20Sabor%20e%20Arte" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="gastronomia">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="Padaria Central" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Gastronomia</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Padaria Central</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Padaria artesanal com cardápio de pães e doces, pedidos online e localização no Google Maps.</p>
+                    <div class="comercio-card__tags"><span>Pedidos</span><span>Mapa</span><span>Galeria</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20a%20Padaria%20Central" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="moda">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop" alt="Elegância Boutique" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Moda</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Elegância Boutique</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Boutique de moda feminina com vitrine digital, catálogo de produtos e botão direto para compra pelo WhatsApp.</p>
+                    <div class="comercio-card__tags"><span>Vitrine</span><span>Catálogo</span><span>WhatsApp</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20a%20Elegancia%20Boutique" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="moda">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=800&auto=format&fit=crop" alt="Moda Urbana Loja" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Moda</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Moda Urbana</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Loja de streetwear com lookbook digital, novidades em destaque e integração com redes sociais.</p>
+                    <div class="comercio-card__tags"><span>Lookbook</span><span>Social</span><span>Promoções</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20a%20Moda%20Urbana" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="servicos">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=800&auto=format&fit=crop" alt="Barbearia Premium" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Serviços</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Barbearia Premium</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Barbearia de alto padrão com agendamento automático, galeria de cortes e sistema de fidelidade.</p>
+                    <div class="comercio-card__tags"><span>Agendamento</span><span>Fidelidade</span><span>Galeria</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20a%20Barbearia%20Premium" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="servicos">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Oficina do Carlos" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Serviços</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Oficina do Carlos</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Oficina mecânica com orçamento online, agendamento de serviços e histórico de manutenções.</p>
+                    <div class="comercio-card__tags"><span>Orçamento</span><span>Agendamento</span><span>Histórico</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20a%20Oficina%20do%20Carlos" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="saude">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" alt="Clínica Sorriso" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Saúde</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Clínica Sorriso</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Clínica odontológica com agendamento de consultas, apresentação de tratamentos e depoimentos.</p>
+                    <div class="comercio-card__tags"><span>Consultas</span><span>Tratamentos</span><span>Depoimentos</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20a%20Clinica%20Sorriso" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="saude">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=800&auto=format&fit=crop" alt="Pet Shop Amigo" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Saúde</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Pet Shop Amigo</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Pet shop e clínica veterinária com agendamento de banho, tosa e consultas. Galeria de pets atendidos.</p>
+                    <div class="comercio-card__tags"><span>Banho & Tosa</span><span>Veterinário</span><span>Galeria</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20ao%20Pet%20Shop%20Amigo" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="saude">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop" alt="Fisioterapia Vida" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Saúde</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Fisioterapia Vida</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Clínica de fisioterapia com agendamento de sessões, apresentação de especialidades e resultados.</p>
+                    <div class="comercio-card__tags"><span>Sessões</span><span>Especialidades</span><span>Resultados</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20a%20Fisioterapia%20Vida" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="gastronomia">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=800&auto=format&fit=crop" alt="Café & Cia" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Gastronomia</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Café & Cia</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Cafeteria especializada com cardápio de bebidas artesanais, ambiente acolhedor e pedidos para retirada.</p>
+                    <div class="comercio-card__tags"><span>Cardápio</span><span>Delivery</span><span>Ambiente</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20ao%20Cafe%20e%20Cia" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comercio-card fade-up" data-cat="servicos">
+                <div class="comercio-card__img-wrap">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Imobiliária Prime" class="comercio-card__img" loading="lazy">
+                    <span class="comercio-card__categoria">Serviços</span>
+                    <div class="comercio-card__overlay"><h3 class="comercio-card__nome">Imobiliária Prime</h3></div>
+                </div>
+                <div class="comercio-card__body">
+                    <p class="comercio-card__desc">Imobiliária com catálogo de imóveis, filtros de busca, agendamento de visitas e formulário de contato.</p>
+                    <div class="comercio-card__tags"><span>Catálogo</span><span>Visitas</span><span>Contato</span></div>
+                    <div class="comercio-card__footer">
+                        <span class="comercio-card__status"><i class="fa-solid fa-circle"></i> Site no ar</span>
+                        <a href="https://wa.me/5511953429077?text=Quero%20um%20site%20igual%20a%20Imobiliaria%20Prime" class="btn-ver-site">Quero igual</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <section class="depoimentos" id="depoimentos">
     <div class="container">
@@ -376,6 +604,38 @@
     </div>
 </section>
 
+<section class="faq" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <span class="tag">Dúvidas</span>
+            <h2>Perguntas Frequentes</h2>
+            <p>Tudo o que você precisa saber antes de começar.</p>
+        </div>
+        <div class="faq__lista">
+            <div class="faq__item">
+                <div class="faq__pergunta">Quanto tempo leva para o site ficar pronto? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq__resposta">Em média, de 3 a 7 dias úteis após a aprovação do briefing e recebimento do conteúdo. Sites mais complexos podem levar até 15 dias.</div>
+            </div>
+            <div class="faq__item">
+                <div class="faq__pergunta">O site já vem com domínio e hospedagem? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq__resposta">O valor de R$450 inclui o desenvolvimento do site. Domínio e hospedagem são custos separados, mas podemos configurar tudo para você.</div>
+            </div>
+            <div class="faq__item">
+                <div class="faq__pergunta">Posso editar o site sozinho depois? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq__resposta">Sim! Entregamos um painel de controle intuitivo onde você pode alterar textos, imagens e informações de contato sem precisar de programador.</div>
+            </div>
+            <div class="faq__item">
+                <div class="faq__pergunta">O site fica bom no celular? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq__resposta">Com certeza! Todos os nossos sites são 100% responsivos, ou seja, se adaptam perfeitamente a qualquer tamanho de tela: celular, tablet e desktop.</div>
+            </div>
+            <div class="faq__item">
+                <div class="faq__pergunta">E se eu não gostar do resultado? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq__resposta">Trabalhamos com revisões ilimitadas durante o processo de criação. Sua satisfação é garantida. Além disso, oferecemos suporte por 30 dias após a entrega.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="cta-final">
     <div class="container">
         <h2>Pronto para transformar seu comércio?</h2>
@@ -398,7 +658,7 @@
                 <h4>Serviços</h4>
                 <a href="#servicos">Site Profissional</a>
                 <a href="#servicos">Gestão Inteligente</a>
-                <a href="comercios.html">Ver Comércios</a>
+                <a href="#comercios">Ver Comércios</a>
             </div>
             <div class="footer__links">
                 <h4>Empresa</h4>
@@ -418,12 +678,33 @@
     <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+<a href="#" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+</a>
+
 <script>
-    // Header scroll
     window.addEventListener('scroll',()=>{
-        document.getElementById('header').classList.toggle('scrolled',window.scrollY>50)
+        document.getElementById('header').classList.toggle('scrolled',window.scrollY>50);
+        document.getElementById('backToTop').classList.toggle('visible',window.scrollY>500);
     });
-    // Animations
+
+    function filter(cat){
+        document.querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('active'));
+        event.target.classList.add('active');
+        document.querySelectorAll('.comercio-card').forEach(card=>{
+            card.style.display=(cat==='todos'||card.dataset.cat===cat)?'block':'none';
+            if(card.style.display==='block'){card.classList.remove('visible');setTimeout(()=>card.classList.add('visible'),50)}
+        });
+    }
+
+    document.querySelectorAll('.faq__item').forEach(item=>{
+        item.addEventListener('click',()=>{
+            const isActive=item.classList.contains('active');
+            document.querySelectorAll('.faq__item').forEach(i=>i.classList.remove('active'));
+            if(!isActive)item.classList.add('active');
+        });
+    });
+
     const obs=new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});
     document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </script>
